@@ -1,7 +1,17 @@
 module.exports = [
   'strapi::errors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      origin: [
+        'http://localhost:5173',
+        'https://mathilde-bruzat.vercel.app',
+      ],
+      headers: '*',
+    },
+  },
   'strapi::security',
-  'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
